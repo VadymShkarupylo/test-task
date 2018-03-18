@@ -12,9 +12,7 @@ Cell: row => (
 	<div>
 		<img height={100} src={row.original.artworkUrl100} />
 	</div>
-)
-
-}, {
+)}, {
 Header: 'Artist',
 accessor: 'artistName'
 }, {
@@ -64,6 +62,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className = 'button_container'>
+
 				<p id = "submission">
 				<input ref = {(a) => this._inputElement = a}
 					placeholder = "enter the keyword">
@@ -72,6 +71,7 @@ class App extends Component {
 					<span className="glyphicon glyphicon-search"></span>
 				</button>
 				</p>
+
 				<ReactTable
     			data={this.state.results}
     			columns={columns}
