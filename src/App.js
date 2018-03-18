@@ -32,7 +32,6 @@ class App extends Component {
     Header: '',
 		Cell: row => (
 			<div>
-				//<img height={30} src={'http://is1.mzstatic.com/image/thumb/Music2/v4/a2/66/32/a2663205-663c-8301-eec7-57937c2d0878/source/30x30bb.jpg'} />
 				<img height={30} src="{$'artworkUrl30'}" />
 			</div>
 		)
