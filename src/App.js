@@ -5,7 +5,42 @@ import ReactTable from 'react-table';
 import './App.css';
 import 'react-table/react-table.css';
 
+const columns = [
+	{
+Header: '',
+Cell: row => (
+	<div>
+		<img height={100} src={row.original.artworkUrl100} />
+	</div>
+)
+
+}, {
+Header: 'Artist',
+accessor: 'artistName'
+}, {
+Header: 'Track',
+accessor: 'trackName'
+}, {
+Header: 'Collection',
+accessor: 'collectionName'
+},
+{
+Header: 'Genre',
+accessor: 'primaryGenreName'
+},
+{
+Header: '',
+Cell: row => (
+	<div>
+		<button type = "push"><span className="glyphicon glyphicon-plus"></span></button>
+	</div>
+)
+}
+]
+
 class App extends Component {
+
+
 
 	handleClick() {
 		axios.get('https://itunes.apple.com/search?term='+this._inputElement.value)
@@ -27,39 +62,6 @@ class App extends Component {
 	}
 
 	render() {
-		const columns = [
-			{
-    Header: '',
-		Cell: row => (
-			<div>
-				<img height={30} src="{$'artworkUrl30'}" />
-			</div>
-		)
-
-  }, {
-    Header: 'Artist',
-    accessor: 'artistName'
-  }, {
-    Header: 'Track',
-    accessor: 'trackName'
-  }, {
-    Header: 'Collection',
-    accessor: 'collectionName'
-  },
-	{
-    Header: 'Genre',
-    accessor: 'primaryGenreName'
-  },
-	{
-    Header: '',
-		Cell: row => (
-			<div>
-				<button type = "push"><span className="glyphicon glyphicon-plus"></span></button>
-			</div>
-		)
-  }
-]
-
 		return (
 			<div className = 'button_container'>
 				<p id = "submission">
